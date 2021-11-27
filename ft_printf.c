@@ -6,7 +6,7 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 16:28:20 by marvin            #+#    #+#             */
-/*   Updated: 2021/10/29 21:44:24 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/11/27 12:14:52 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int	print_arg(char *fmt, t_flag *new_arg, va_list arg)
 		if (new_arg->size_only && !new_arg->zero)
 			print_no_spicifier(new_arg);
 		else
-			ft_putchar_fd(fmt[i], 1, new_arg);
+			putchar_fd(fmt[i], 1, new_arg);
 	}
 	return (i);
 }
@@ -73,7 +73,7 @@ int	ft_printf(const char *var, ...)
 		else if (var[i] != '%' && new_arg->print_flag == 1)
 			i += print_arg((char *)&var[i], new_arg, arg);
 		else
-			ft_putchar_fd(var[i], 1, new_arg);
+			putchar_fd(var[i], 1, new_arg);
 		i++;
 	}
 	free (new_arg);

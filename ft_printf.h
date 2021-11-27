@@ -6,7 +6,7 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 14:58:48 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/29 21:47:12 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/11/27 12:25:23 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <stddef.h>
 # include <stdarg.h>
+# include "../libft/libft.h"
 
 typedef struct s_flag
 {
@@ -39,15 +40,14 @@ typedef struct s_flag
 	int				print_flag;
 }				t_flag;
 
-size_t	ft_strlen(const char *str);
-void	ft_putnbr_fd(int n, t_flag *new_arg, int fd);
+void	putnbr_fd(int n, t_flag *new_arg, int fd);
 int		ft_printf(const char *var, ...);
-void	ft_putpnbr_fd(unsigned long long int nb, t_flag *new_arg, int fd);
-void	ft_putunbr_fd(unsigned int nb, t_flag *new_arg, int fd);
-void	ft_putxnbr_fd(unsigned int nb, t_flag *new_arg, int fd);
-void	ft_putxxnbr_fd(unsigned int nb, t_flag *new_arg, int fd);
-void	ft_putchar_fd(char c, int fd, t_flag *new_arg);
-void	ft_putstr_fd(char *s, int fd, t_flag *new_arg);
+void	putpnbr_fd(unsigned long long int nb, t_flag *new_arg, int fd);
+void	putunbr_fd(unsigned int nb, t_flag *new_arg, int fd);
+void	putxnbr_fd(unsigned int nb, t_flag *new_arg, int fd);
+void	putxxnbr_fd(unsigned int nb, t_flag *new_arg, int fd);
+void	putchar_fd(char c, int fd, t_flag *new_arg);
+void	putstr_fd(char *s, int fd, t_flag *new_arg);
 int		get_arg_len(t_flag *new_arg, va_list arg);
 void	print_all(t_flag *new_arg, va_list arg);
 void	check_padding(t_flag *new_arg, va_list arg);

@@ -1,20 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   putnbr_fd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/01 10:00:59 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/29 19:05:59 by bnaji            ###   ########.fr       */
+/*   Created: 2021/10/01 12:57:27 by bnaji             #+#    #+#             */
+/*   Updated: 2021/11/27 12:13:54 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd, t_flag *new_arg)
+void	putnbr_fd(int nb, t_flag *new_arg, int fd)
 {
-	write(fd, &c, 1);
-	new_arg->counter++;
-	new_arg->print_flag = 0;
+	int	new_nb;
+
+	if (new_arg->zero_int_flag)
+		return ;
+	if (nb == 0)
+		putchar_fd(nb + 48, fd, new_arg);
+	else if (nb > 0)
+	{
+		new_nb = nb / 10;
+		if (new_nb != 0)
+			putnbr_fd(new_nb, new_arg, fd);
+		putchar_fd(nb % 10 + 48, fd, new_arg);
+	}
+	else
+	{
+		new_nb = 0 - (nb / 10);
+		if (new_nb != 0)
+			putnbr_fd(new_nb, new_arg, fd);
+		putchar_fd(0 - (nb % 10) + 48, fd, new_arg);
+	}
 }

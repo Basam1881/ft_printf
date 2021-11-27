@@ -1,0 +1,19 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/bnaji/Desktop/push_swap/ft_printf'
+cc    -c -o putchar_fd.o putchar_fd.c
+ 
+cc    -c -o putstr_fd.o putstr_fd.c
+cc    -c -o putnbr_fd.o putnbr_fd.c
+cc    -c -o ft_printf.o ft_printf.c
+cc    -c -o putunbr_fd.o putunbr_fd.c
+cc    -c -o putpnbr_fd.o putpnbr_fd.c
+ 
+cc    -c -o putxnbr_fd.o putxnbr_fd.c
+cc    -c -o putxxnbr_fd.o putxxnbr_fd.c
+cc    -c -o ft_checks.o ft_checks.c
+cc    -c -o ft_print_arg.o ft_print_arg.c
+cc    -c -o ft_get_me_arg_len.o ft_get_me_arg_len.c
+gcc -c -Wall -Wextra -Werror putchar_fd.c putstr_fd.c putnbr_fd.c ft_printf.c putunbr_fd.c putpnbr_fd.c putxnbr_fd.c putxxnbr_fd.c ft_checks.c ft_print_arg.c ft_get_me_arg_len.c
+ar -rc libftprintf.a putchar_fd.o putstr_fd.o putnbr_fd.o ft_printf.o putunbr_fd.o putpnbr_fd.o putxnbr_fd.o putxxnbr_fd.o ft_checks.o ft_print_arg.o ft_get_me_arg_len.o 
+make: Leaving directory `/Users/bnaji/Desktop/push_swap/ft_printf'
+ 

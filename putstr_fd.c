@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   putstr_fd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 11:56:57 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/29 17:30:55 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/11/27 12:13:16 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	if_null(int fd, t_flag *new_arg)
 	}
 }
 
-void	ft_putstr_fd(char *s, int fd, t_flag *new_arg)
+void	putstr_fd(char *s, int fd, t_flag *new_arg)
 {
 	if (!s)
 		if_null(fd, new_arg);

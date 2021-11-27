@@ -1,16 +1,15 @@
 
-SRC_NAME = ft_putchar_fd.c\
-		ft_putstr_fd.c\
-		ft_putnbr_fd.c\
+SRC_NAME = putchar_fd.c\
+		putstr_fd.c\
+		putnbr_fd.c\
 		ft_printf.c\
-		ft_putunbr_fd.c\
-		ft_putpnbr_fd.c\
-		ft_putxnbr_fd.c\
-		ft_putxxnbr_fd.c\
+		putunbr_fd.c\
+		putpnbr_fd.c\
+		putxnbr_fd.c\
+		putxxnbr_fd.c\
 		ft_checks.c\
 		ft_print_arg.c\
-		ft_get_me_arg_len.c\
-		ft_strlen.c
+		ft_get_me_arg_len.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o) 
 CFLAG = -Wall -Wextra -Werror
